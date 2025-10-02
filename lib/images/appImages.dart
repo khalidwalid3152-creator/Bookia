@@ -16,5 +16,4 @@ class Appimages {
   static const String or = 'assets/images/or.png';
   static const String appleButton = 'assets/images/appleButton.png';
   static const String googleButton = 'assets/images/googleButton.png';
-
 }

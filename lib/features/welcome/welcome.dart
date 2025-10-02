@@ -1,5 +1,5 @@
-import 'package:bookia/features/login/login.dart';
-import 'package:bookia/features/register/register.dart';
+import 'package:bookia/constants/routes/Routes.dart';
+import 'package:bookia/constants/routes/route.dart';
 import 'package:bookia/images/appImages.dart';
 import 'package:bookia/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -44,10 +44,7 @@ class Welcome extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context)=>login()),
-                    );
+                    PushTo(context, Routes.login);
                   },
                   child: Text('login', style: textstyles.size16()),
                 ),
@@ -63,10 +60,7 @@ class Welcome extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                     Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context)=>register()),
-                    );
+                    PushTo(context, Routes.register);
                   },
                   child: Text(
                     'Register',

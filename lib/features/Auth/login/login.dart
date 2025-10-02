@@ -1,13 +1,13 @@
-import 'package:bookia/features/forgetPassword/forget.dart';
-import 'package:bookia/features/register/register.dart';
+import 'package:bookia/constants/routes/Routes.dart';
+import 'package:bookia/constants/routes/route.dart';
 import 'package:bookia/images/appImages.dart';
 import 'package:bookia/utils/colors.dart';
 import 'package:bookia/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class login extends StatelessWidget {
-  const login({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +49,7 @@ class login extends StatelessWidget {
         Text('Don’t have an account?', style: textstyles.size14()),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => register()),
-            );
+            PushTo(context, Routes.register);
           },
           child: Text(
             'Register Now',
@@ -96,10 +93,7 @@ class login extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       ),
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => login()),
-        );
+        PushTo(context, Routes.login);
       },
       child: Text('login', style: textstyles.size16()),
     );
@@ -147,10 +141,7 @@ class login extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Forget()),
-            );
+            PushTo(context, Routes.forget);
           },
           child: Text(
             'Forget Password?',
