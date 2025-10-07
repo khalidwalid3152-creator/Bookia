@@ -10,7 +10,7 @@ showErrorDialog(BuildContext context, String message) {
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       backgroundColor: Appcolors.orangecolor,
-      content: Text(message, style: textstyles.size18(color: Appcolors.bgtext)),
+      content: Text(textAlign: TextAlign.center,message, style: textstyles.size18(color: Appcolors.bgtext)),
     ),
   );
 }

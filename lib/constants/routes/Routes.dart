@@ -12,3 +12,6 @@ ReplaceTo(BuildContext context, String route) {
 RemoveUntil(BuildContext context, String route) {
   context.go(route);
 }
+pop(BuildContext context) {
+  context.pop();
+}

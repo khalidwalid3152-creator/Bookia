@@ -1,5 +1,3 @@
-
-
 import 'package:bookia/constants/dialogs/dialog.dart';
 import 'package:bookia/constants/routes/Routes.dart';
 import 'package:bookia/constants/routes/route.dart';
@@ -25,8 +23,10 @@ class Register extends StatelessWidget {
           if (state is AuthLoading) {
             showloadingdialog(context);
           } else if (state is AuthSuccess) {
-            print("kkkkkk");
+            pop(context);
+            RemoveUntil(context, Routes.mainappscreen);
           } else if (state is AuthFailure) {
+            pop(context);
             showErrorDialog(context, "Registration failed !");
           }
         },
@@ -34,32 +34,35 @@ class Register extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: Form(
             key: cubit.formkey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Hello! Register to get \n started',
-                  style: textstyles.size30(),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Hello! Register to get \n started',
+                      style: textstyles.size30(),
+                    ),
+                    Gap(20),
+                    _nameField(cubit.name),
+                    Gap(20),
+                    _Email(cubit.email),
+                    Gap(20),
+                    _password(cubit.password),
+                    Gap(20),
+                    _password2(cubit.confirmPassword),
+                    Gap(30),
+                    _registerButton(context, () {
+                      if (cubit.formkey.currentState!.validate()) {
+                        cubit.register();
+                      }
+                    }),
+                    Gap(150),
+                    _bottom(context),
+                  ],
                 ),
-                Gap(20),
-                _nameField(cubit.name),
-                Gap(20),
-                _Email(cubit.email),
-                Gap(20),
-                _password(cubit.password),
-                Gap(20),
-                _password2(cubit.confirmPassword),
-                Gap(30),
-                _registerButton(context, () {
-                  if (cubit.formkey.currentState!.validate()) {
-                    cubit.register();
-                  }
-                  ;
-                }),
-                Gap(150),
-                _bottom(context),
-              ],
+              ),
             ),
           ),
         ),

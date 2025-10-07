@@ -28,4 +28,18 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthFailure());
     }
   }
+
+  login() async {
+    emit(AuthLoading());
+    var parames = AuthParames(
+      email: email.text,
+      password: password.text,
+    );
+    var res = await AuthRepo.login(parames);
+    if (res != null) {
+      emit(AuthSuccess());
+    } else {
+      emit(AuthFailure());
+    }
+  }
 }

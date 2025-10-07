@@ -12,8 +12,8 @@ class DioProvider {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? header,
-  }) {
-    dio.post(
+  }) async {
+    return await dio.post(
       path,
       data: data,
       queryParameters: queryParameters,
@@ -26,8 +26,8 @@ class DioProvider {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? header,
-  }) {
-    dio.get(
+  }) async {
+    return await dio.get(
       path,
       data: data,
       queryParameters: queryParameters,
@@ -40,8 +40,8 @@ class DioProvider {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? header,
-  }) {
-    dio.delete(
+  }) async {
+   return await dio.delete(
       path,
       data: data,
       queryParameters: queryParameters,
@@ -54,8 +54,8 @@ class DioProvider {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? header,
-  }) {
-    dio.put(
+  }) async {
+   return await dio.put(
       path,
       data: data,
       queryParameters: queryParameters,
@@ -68,8 +68,8 @@ class DioProvider {
     Object? data,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? header,
-  }) {
-    dio.patch(
+  }) async {
+   return await dio.patch(
       path,
       data: data,
       queryParameters: queryParameters,
