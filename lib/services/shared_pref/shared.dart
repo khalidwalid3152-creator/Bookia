@@ -13,6 +13,7 @@ static saveUserData(DataUser? dataUser) {
   if (dataUser == null) return;
   //عشان احول الماب الى سترينج اللي هو ال جسون اللي جاي من الريسبونس
     var json=dataUser.tojson();
+    //jsonencode بتحول الماب لاسترنج
     var jsonToString=jsonEncode(json);
     savedata(keyUserData, jsonToString);
   }

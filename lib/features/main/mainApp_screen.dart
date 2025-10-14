@@ -1,3 +1,4 @@
+import 'package:bookia/features/home/home.dart';
 import 'package:bookia/images/appImages.dart';
 import 'package:bookia/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +13,19 @@ class MainappScreen extends StatefulWidget {
 
 class _MainappScreenState extends State<MainappScreen> {
    int current_index = 0;
+
   @override
   Widget build(BuildContext context) {
    
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        title: SvgPicture.asset(Appimages.logo2,height: 30,),
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.search))
+        ],
+      ),
+      body: Home(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: current_index,
         onTap: (index) {
